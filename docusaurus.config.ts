@@ -127,6 +127,11 @@ const config: Config = {
           title: 'More',
           items: [
             {
+              src: 'img/github.svg',
+              label: 'GitHub',
+              href: 'https://github.com/facebook/docusaurus',
+            },
+            {
               label: 'Blog',
               to: '/blog',
             },
