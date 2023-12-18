@@ -12,7 +12,7 @@ export default function Home(): JSX.Element {
     >
       <HomepageHeader />
       <main>
-        <h1>hi!</h1>
+        <h1>Hello world!</h1>
       </main>
     </Layout>
   );

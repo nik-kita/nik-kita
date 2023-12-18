@@ -3,21 +3,11 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'nik-kita',
+  tagline: 'Nikita Moiseienko',
   favicon: 'img/favicon.ico',
-
-  // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  url: 'https://nik-kita.deno.dev',
   baseUrl: '/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
-
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
@@ -44,25 +34,11 @@ const config: Config = {
             '**/__tests__/**',
           ],
           mdxPageComponent: '@theme/MDXPage',
-          remarkPlugins: [],
-          rehypePlugins: [],
-          beforeDefaultRemarkPlugins: [],
-          beforeDefaultRehypePlugins: [],
         },
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+        blog: {},
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -71,12 +47,10 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: '',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -87,60 +61,85 @@ const config: Config = {
           label: 'Tutorial',
         },
         { to: '/blog', label: 'Blog', position: 'left' },
-        {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
-        },
       ],
     },
     footer: {
-      style: 'dark',
+      style: 'light',
       links: [
         {
-          title: 'Docs',
+          title: 'My accounts',
           items: [
             {
-              label: 'Tutorial',
+              label: 'GitHub',
+              href: 'https://github.com/nik-kita',
+              src: 'img/github.svg',
+            },
+            {
+              label: 'StackOverflow',
+              href: 'https://stackoverflow.com/users/14139506/nik-kita',
+              src: 'img/stackoverflow.svg'
+            },
+            {
+              label: 'NPM',
+              href: 'https://www.npmjs.com/~nik-kita',
+              src: 'img/npm.svg',
+            }
+          ],
+        },
+        {
+          title: 'Follow me on',
+          items: [
+            {
+              label: 'Linkedin',
+              href: 'https://www.linkedin.com/in/nik-kita',
+              src: 'img/linkedin.svg'
+            },
+            {
+              label: 'Instagram',
+              href: 'https://www.instagram.com/nikitamoiseienko/',
+              src: 'img/instagram.svg',
+            }
+          ],
+        },
+        {
+          title: 'My pets',
+          items: [
+            {
+              label: 'SugarWs',
               to: '/docs/intro',
             },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: 'This site',
+              to: '/',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'HelloWorld("print")',
           items: [
             {
-              src: 'img/github.svg',
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'CodeWars',
+              href: 'https://www.codewars.com/users/nik-kita',
+              src: 'img/codewars.svg',
             },
             {
-              label: 'Blog',
-              to: '/blog',
+              label: 'CSS Battle',
+              href: 'https://cssbattle.dev/player/nik_kita',
+              src: 'img/cssbattle.svg',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'HackerRank',
+              href: 'https://www.hackerrank.com/profile/nik_kita',
+              src: 'img/hackerrank.svg',
             },
+            {
+              label: 'LeetCode',
+              href: 'https://leetcode.com/nik-kita',
+              src: 'img/leetcode.svg',
+            }
           ],
         },
+
       ],
       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },

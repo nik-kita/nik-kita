@@ -11,7 +11,7 @@ export default function FooterLinkItem({ item }: Props) {
       className={tw(
         "flex flex-nowrap justify-start",
         "hover:bg-slate-100",
-        "p-1",
+        "p-2 gap-2",
         "rounded-sm",
       )}
       {...(href

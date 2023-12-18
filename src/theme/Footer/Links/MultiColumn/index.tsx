@@ -24,13 +24,17 @@ function ColumnLinkItem({ item }) {
 function Column({ column }) {
   return (
     <div className={tw("col footer__col")}>
-      <div className={tw("text-3xl")}>
+      <div
+        className={tw(
+          "text-2xl font-bold break-keep",
+        )}
+      >
         {column.title}
       </div>
       <ul
         className={tw(
           "text-xl",
-          "flex flex-col flex-nowrap gap-y-1",
+          "flex flex-col flex-nowrap",
         )}
       >
         {column.items.map((item, i) => <ColumnLinkItem key={i} item={item} />)}
