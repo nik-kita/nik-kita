@@ -16,24 +16,7 @@ export default function HomepageHeader() {
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={clsx(styles.buttons, "container")}>
-          <Link
-            className={clsx(
-              "margin-horiz--xs",
-              "button button--secondary button--lg",
-            )}
-            to="/docs/intro"
-          >
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-          <Link
-            className={clsx(
-              "margin-horiz--xs",
-              "button button--secondary button--lg",
-            )}
-            to="/docs/intro"
-          >
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
+          {/* // TODO */}
         </div>
       </div>
     </header>
