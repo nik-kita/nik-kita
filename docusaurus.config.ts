@@ -47,6 +47,7 @@ const config: Config = {
   ],
 
   themeConfig: {
+    image: 'img/deno-with-computer.png',
     navbar: {
       title: '',
       logo: {
