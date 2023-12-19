@@ -3,7 +3,7 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const logo = 'img/nik-kita__vertical-transparent.png';
-const favicon = 'img/nik-kita__favicon.png';
+const favicon = 'img/favicon.ico';
 const card = 'img/nik-kita__horizontal-light.png';
 
 const config: Config = {
