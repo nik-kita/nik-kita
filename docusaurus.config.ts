@@ -41,6 +41,8 @@ const config: Config = {
         },
         docs: {
           sidebarPath: './sidebars.ts',
+          showLastUpdateTime: true,
+          sidebarCollapsed: true,
         },
         blog: {},
         theme: {
@@ -61,9 +63,9 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'defaultSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'SugarWs',
         },
         { to: '/blog', label: 'Blog', position: 'left' },
       ],
