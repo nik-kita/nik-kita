@@ -2,10 +2,14 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+const logo = 'img/nik-kita__vertical-transparent.png';
+const favicon = 'img/nik-kita__favicon.png';
+const card = 'img/nik-kita__horizontal-light.png';
+
 const config: Config = {
   title: 'nik-kita',
   tagline: 'Nikita Moiseienko',
-  favicon: 'img/favicon.ico',
+  favicon,
   url: 'https://nik-kita.deno.dev',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -47,12 +51,12 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/deno-with-computer.png',
+    image: card,
     navbar: {
       title: '',
       logo: {
         alt: 'logo',
-        src: 'img/logo.svg',
+        src: logo,
       },
       items: [
         {
