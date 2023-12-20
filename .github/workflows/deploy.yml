@@ -35,5 +35,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "nik-kita"
-          entrypoint: "https://deno.land/std@0.205.0/http/file_server.ts" # 📝 Update the entrypoint if necessary
-          root: "docusaurus-ui/build" # 📝 Update the root if necessary
+          entrypoint: "main.ts" # 📝 Update the entrypoint if necessary
+          root: "." # 📝 Update the root if necessary
