@@ -1,0 +1,11 @@
+{
+  "tasks": {
+    "dev": "deno run -A --unstable main.ts --watch"
+  },
+  "fmt": {
+    "exclude": ["docusaurus-ui"]
+  },
+  "lint": {
+    "exclude": ["docusaurus-ui"]
+  }
+}
