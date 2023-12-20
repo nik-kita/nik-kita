@@ -36,4 +36,3 @@ jobs:
         with:
           project: "nik-kita-developer"
           entrypoint: "main.ts" # 📝 Update the entrypoint if necessary
-          root: "." # 📝 Update the root if necessary
