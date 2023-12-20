@@ -28,12 +28,11 @@ jobs:
         with:
           node-version: lts/*
 
-      - name: Build step
-        run: "npm install && npm run build" # 📝 Update the build command(s) if necessary
+      - name: Build step for "docusaurus-ui"
+        run: "cd docusaurus-ui && npm install && npm run build" # 📝 Update the build command(s) if necessary
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "nik-kita"
-          entrypoint: "https://deno.land/std@0.205.0/http/file_server.ts" # 📝 Update the entrypoint if necessary
-          root: "build" # 📝 Update the root if necessary
+          project: "nik-kita-developer"
+          entrypoint: "main.ts" # 📝 Update the entrypoint if necessary
