@@ -34,5 +34,5 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "nik-kita-developer"
+          project: "nik-kita"
           entrypoint: "main.ts" # 📝 Update the entrypoint if necessary
