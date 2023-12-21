@@ -1,11 +1,14 @@
 {
   "tasks": {
-    "dev": "deno run -A --unstable main.ts --watch"
+    "dev": "deno run -A --unstable main.ts --watch",
+    "build": "deno task build:spa-ui && deno task build:docusaurus-ui",
+    "build:spa": "cd spa-ui && npm run build",
+    "build:docusaurus": "cd docusaurus-ui && npm run build"
   },
   "fmt": {
-    "exclude": ["docusaurus-ui"]
+    "exclude": ["docusaurus-ui", "spa-ui"]
   },
   "lint": {
-    "exclude": ["docusaurus-ui"]
+    "exclude": ["docusaurus-ui", "spa-ui"]
   }
 }

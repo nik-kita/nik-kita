@@ -3,6 +3,7 @@ import { serveStatic } from "https://deno.land/x/hono@v3.11.8/middleware.ts";
 
 const app = new Hono();
 
+app.use("/spa/*", serveStatic({ root: "./spa-ui/dist" }));
 app.use("/*", serveStatic({ root: "./docusaurus-ui/build" }));
 
 Deno.serve({
