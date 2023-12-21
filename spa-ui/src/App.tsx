@@ -1,8 +1,9 @@
+import { Button, Image } from "antd";
 import { useState } from "react";
 import "./App.css";
+import Duck from "./assets/img/duck.svg";
 import { tw } from "./utils/tw";
 import { useWs } from "./utils/useWs";
-import { Button } from "antd";
 
 const url = new URL(import.meta.url);
 
@@ -60,6 +61,7 @@ function App() {
             Start chatting
           </Button>
         )}
+      <Image src={Duck} alt="happy duck" />
     </div>
   );
 }
