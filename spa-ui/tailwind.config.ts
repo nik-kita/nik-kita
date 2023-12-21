@@ -8,5 +8,9 @@ export default {
   theme: {
     extend: {},
   },
+  important: "#root",
+  corePlugins: {
+    preflight: false,
+  },
   plugins: [],
 } satisfies Config;

@@ -6,8 +6,8 @@ const app = new Hono();
 
 app.route("/api", api);
 
-app.use("/spa/*", serveStatic({ root: "./spa-ui/dist" }));
-app.use("/*", serveStatic({ root: "./docusaurus-ui/build" }));
+app.get("/spa/*", serveStatic({ root: "./spa-ui/dist" }));
+app.get("/*", serveStatic({ root: "./docusaurus-ui/build" }));
 
 Deno.serve({
   onListen() {
