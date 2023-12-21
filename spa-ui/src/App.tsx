@@ -1,4 +1,4 @@
-import { Button, Image } from "antd";
+import { Button, Image, Input } from "antd";
 import { useState } from "react";
 import "./App.css";
 import Duck from "./assets/img/duck.svg";
@@ -42,25 +42,17 @@ function App() {
           );
         })}
       </ul>
-      {is_online
-        ? (
-          <input
-            className={tw(
-              "py-2 px-1",
-              "border rounded-sm border-slate-700",
-            )}
-            type="text"
-          />
-        )
-        : (
-          <Button
-            type="primary"
-            size="large"
-            onClick={() => turn("on")}
-          >
-            Start chatting
-          </Button>
-        )}
+      {is_online ? <Input onChange={(ev) => {
+        console.log(ev);
+      }}/> : (
+        <Button
+          type="primary"
+          size="large"
+          onClick={() => turn("on")}
+        >
+          Start chatting
+        </Button>
+      )}
       <Image src={Duck} alt="happy duck" />
     </div>
   );
