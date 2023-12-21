@@ -1,5 +1,0 @@
-{
-  "scripts": {
-    "dev": "cd app && deno task dev"
-  }
-}

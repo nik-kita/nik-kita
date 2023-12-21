@@ -1,0 +1,17 @@
+{
+  "tasks": {
+    "dev": "cd app && deno task dev",
+    "build": "deno task build:spa && deno task build:docusaurus",
+    "build:spa": "cd spa-ui && npm run build",
+    "build:docusaurus": "cd docusaurus-ui && npm run build"
+  },
+  "exclude": [
+    "app/build",
+    "docusaurus-ui/node_modules",
+    "docusaurus-ui/.docusaurus",
+    "spa-ui/node_modules"
+  ],
+  "lint": {
+    "include": ["app"]
+  }
+}
