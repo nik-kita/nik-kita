@@ -38,4 +38,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "nik-kita"
+          root: app
           entrypoint: "main.ts"

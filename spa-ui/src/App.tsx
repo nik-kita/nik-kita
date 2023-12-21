@@ -42,17 +42,23 @@ function App() {
           );
         })}
       </ul>
-      {is_online ? <Input onChange={(ev) => {
-        console.log(ev);
-      }}/> : (
-        <Button
-          type="primary"
-          size="large"
-          onClick={() => turn("on")}
-        >
-          Start chatting
-        </Button>
-      )}
+      {is_online
+        ? (
+          <Input
+            onChange={(ev) => {
+              console.log(ev);
+            }}
+          />
+        )
+        : (
+          <Button
+            type="primary"
+            size="large"
+            onClick={() => turn("on")}
+          >
+            Start chatting
+          </Button>
+        )}
       <Image src={Duck} alt="happy duck" />
     </div>
   );

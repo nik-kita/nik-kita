@@ -6,7 +6,7 @@ export default defineConfig({
   base: "/spa",
   build: {
     assetsDir: "spa/assets",
-    outDir: "../dist/spa",
+    outDir: "./dist/spa",
   },
   plugins: [react()],
 });
