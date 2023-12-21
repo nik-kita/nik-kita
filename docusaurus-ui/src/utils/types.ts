@@ -6,11 +6,10 @@ export type OmitStrict<
 export type OmitReplace<
   T extends Record<string, any>,
   U extends Record<string, any>,
-> = keyof U extends (infer R extends keyof T)
-  ? Omit<T, R> & U
+> = keyof U extends (infer R extends keyof T) ? Omit<T, R> & U
   : never;
 
 export type AddOrReplace<
   T extends Record<string, any>,
-  U extends Record<string, any>
+  U extends Record<string, any>,
 > = Omit<T, keyof U> & U;
