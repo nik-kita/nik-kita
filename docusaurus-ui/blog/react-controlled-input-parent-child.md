@@ -3,13 +3,14 @@ title: Delegating Control Over Input to a Child Component
 tags: [react, reflections, lab]
 ---
 
-# Introduction
+
+## Introduction
 
 React offers two approaches for managing inputs: controlled and uncontrolled. Controlled inputs, where the input value is explicitly managed by React (typically using useState and handling changes with onChange()), allow for more complex scenarios and precise control. Uncontrolled inputs delegate this responsibility to the browser, resulting in a loss of fine-grained control over the component's behavior.
 
 In React, controlled inputs are generally preferred because they integrate seamlessly with React's state management and lifecycle.
 
-# Problem
+## Problem
 
 A potential issue with controlled inputs is performance degradation. This occurs because every keystroke triggers a rerender, which can affect the performance of the component and its siblings.
 
@@ -21,7 +22,7 @@ The React documentation suggests isolating frequent rerenders in a smaller compo
 
 :::
 
-# Pseudo-problem. The main topic of this post by the way.
+## Pseudo-problem. The main topic of this post by the way.
 
 Simply speaking it looks like we should isolate all stuff related to this input. So the component where this input's value is used should be watch for these rerenders to still actual. And the most common example is form.
 
@@ -117,13 +118,15 @@ function App() {
     <div>
       <ComponentWithInput />
       <p>
+      <br/>
+      <br/>
+      <br/>
+RENDER STATISTIC:
         <br />
-        {"Component:___"} {componentCounter}
+Component: {componentCounter}
         <br />
-        {"Input:_______"} {inputCounter}
+Input: {inputCounter}
       </p>
-      <br/>
-      <br/>
       <br/>
       <br/>
       <Button onClick={() => {
