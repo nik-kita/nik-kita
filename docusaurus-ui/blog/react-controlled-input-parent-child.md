@@ -3,41 +3,53 @@ title: Delegating Control Over Input to a Child Component
 tags: [react, reflections, lab]
 ---
 
-
 ## Introduction
 
-React offers two approaches for managing inputs: controlled and uncontrolled. Controlled inputs, where the input value is explicitly managed by React (typically using useState and handling changes with onChange()), allow for more complex scenarios and precise control. Uncontrolled inputs delegate this responsibility to the browser, resulting in a loss of fine-grained control over the component's behavior.
+React offers two approaches for managing inputs: controlled and uncontrolled.
+Controlled inputs, where the input value is explicitly managed by React
+(typically using useState and handling changes with onChange()), allow for more
+complex scenarios and precise control. Uncontrolled inputs delegate this
+responsibility to the browser, resulting in a loss of fine-grained control over
+the component's behavior.
 
-In React, controlled inputs are generally preferred because they integrate seamlessly with React's state management and lifecycle.
+In React, controlled inputs are generally preferred because they integrate
+seamlessly with React's state management and lifecycle.
 
 ## Problem
 
-A potential issue with controlled inputs is performance degradation. This occurs because every keystroke triggers a rerender, which can affect the performance of the component and its siblings.
+A potential issue with controlled inputs is performance degradation. This occurs
+because every keystroke triggers a rerender, which can affect the performance of
+the component and its siblings.
 
 :::info
 
 ### [Link to solution from official React documentation](https://react.dev/reference/react-dom/components/input#optimizing-re-rendering-on-every-keystroke)
 
-The React documentation suggests isolating frequent rerenders in a smaller component to prevent affecting sibling components. This is an effective and straightforward solution. React Documentation on Optimizing Re-Renders
+The React documentation suggests isolating frequent rerenders in a smaller
+component to prevent affecting sibling components. This is an effective and
+straightforward solution. React Documentation on Optimizing Re-Renders
 
 :::
 
 ## Pseudo-problem. The main topic of this post by the way.
 
-Simply speaking it looks like we should isolate all stuff related to this input. So the component where this input's value is used should be watch for these rerenders to still actual. And the most common example is form.
+Simply speaking it looks like we should isolate all stuff related to this input.
+So the component where this input's value is used should be watch for these
+rerenders to still actual. And the most common example is form.
 
 ---
 
-__But what if I want to isolated from input's rerenders this parent component that in other hand is interested in input's value?__
-So only when I need this value - simply ask about it.
+**But what if I want to isolated from input's rerenders this parent component
+that in other hand is interested in input's value?** So only when I need this
+value - simply ask about it.
 
 ### My solution (honestly hardcode, that only fulfill above conditions, but can't be used in production)
 
-The solution involves using `useState` for managing the input value and `useRef` for a real-time representation of the input value. This method minimizes rerenders in the parent component while keeping the input value accessible.
-
+The solution involves using `useState` for managing the input value and `useRef`
+for a real-time representation of the input value. This method minimizes
+rerenders in the parent component while keeping the input value accessible.
 
 ```jsx live noInline
-
 // Count re-render of compoonents
 let c = 0; // for "ComponentWithInput"
 let i = 0; // for "Input"
@@ -105,7 +117,9 @@ function ComponentWithInput() {
           }
           // and where and what we should do in 'else' block...?
         }}
-      >send</Button>
+      >
+        send
+      </Button>
     </div>
   );
 }
@@ -118,35 +132,45 @@ function App() {
     <div>
       <ComponentWithInput />
       <p>
-      <br/>
-      <br/>
-      <br/>
-RENDER STATISTIC:
         <br />
-Component: {componentCounter}
         <br />
-Input: {inputCounter}
+        <br />
+        RENDER STATISTIC:
+        <br />
+        Component: {componentCounter}
+        <br />
+        Input: {inputCounter}
       </p>
-      <br/>
-      <br/>
-      <Button onClick={() => {
-        setComponentCounter(c);
-        setInputCounter(i);
-      }}>Update statistic button</Button>
+      <br />
+      <br />
+      <Button
+        onClick={() => {
+          setComponentCounter(c);
+          setInputCounter(i);
+        }}
+      >
+        Update statistic button
+      </Button>
     </div>
   );
 }
 
-render(<App/>);
-
+render(<App />);
 ```
 
 # Conclusion:
-Make blank the child's input in such situation is become little difficult. And what if we want to add more and more details? So something like `options` with possible `reset`, `isEnterPressed` or etc. should be used and it will become the more and more difficult and buggy...
-So it looks like there is no optimal solution for `half-controlled` or more precisely `half-uncontrolled`.
-If you don't care about input in meaning that it should be and we want ask value at some moment and that's all - so may be `uncontrolled` is possible variant.
-But for `controlled` it looks like you should integrete it with parent that is needed in it.
-So for performanse health -- make decomposition for this inputs already with their consumers is best practice (this was already mentions in official dos's solution)
+
+Make blank the child's input in such situation is become little difficult. And
+what if we want to add more and more details? So something like `options` with
+possible `reset`, `isEnterPressed` or etc. should be used and it will become the
+more and more difficult and buggy... So it looks like there is no optimal
+solution for `half-controlled` or more precisely `half-uncontrolled`. If you
+don't care about input in meaning that it should be and we want ask value at
+some moment and that's all - so may be `uncontrolled` is possible variant. But
+for `controlled` it looks like you should integrete it with parent that is
+needed in it. So for performanse health -- make decomposition for this inputs
+already with their consumers is best practice (this was already mentions in
+official dos's solution)
 
 ### But may be I miss something?
 
@@ -154,4 +178,12 @@ So for performanse health -- make decomposition for this inputs already with the
 
 ### Thoughts and Analysis about all above by ChatGPT
 
-The original text effectively conveys the technical challenge of managing input states in React applications, particularly the trade-offs between controlled and uncontrolled inputs. However, the proposed solution, while innovative, appears to be somewhat complex and might introduce additional maintenance challenges. It's important to strike a balance between performance optimization and code maintainability. The conclusion rightly points out that there might not be a one-size-fits-all solution and that different scenarios may require different approaches. The discussion opens up possibilities for further exploration and optimization in React input management.
+The original text effectively conveys the technical challenge of managing input
+states in React applications, particularly the trade-offs between controlled and
+uncontrolled inputs. However, the proposed solution, while innovative, appears
+to be somewhat complex and might introduce additional maintenance challenges.
+It's important to strike a balance between performance optimization and code
+maintainability. The conclusion rightly points out that there might not be a
+one-size-fits-all solution and that different scenarios may require different
+approaches. The discussion opens up possibilities for further exploration and
+optimization in React input management.

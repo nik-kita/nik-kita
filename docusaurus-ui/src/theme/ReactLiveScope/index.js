@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 
 const Button = (props) => (
   <button
     {...props}
     style={{
-      backgroundColor: 'grey',
-      color: 'white',
-      border: '1px solid black',
+      backgroundColor: "grey",
+      color: "white",
+      border: "1px solid black",
       borderRadius: 2,
-      padding: '1px 5px',
-      cursor: 'pointer',
+      padding: "1px 5px",
+      cursor: "pointer",
       ...props.style,
     }}
   />

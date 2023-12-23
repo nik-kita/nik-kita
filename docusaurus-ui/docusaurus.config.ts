@@ -7,7 +7,7 @@ const favicon = "img/favicon.ico";
 const card = "img/nik-kita__horizontal-light.png";
 
 const config: Config = {
-  themes: ['@docusaurus/theme-live-codeblock'],
+  themes: ["@docusaurus/theme-live-codeblock"],
   title: "nik-kita",
   tagline: "Nikita Moiseienko",
   favicon,
