@@ -6,12 +6,17 @@ import { tw } from "./utils/tw";
 import { useWs } from "./utils/useWs";
 
 const url = new URL(import.meta.url);
+const description =
+  `This chat is served by CHAT-GPT bot that already know all required information about me and even little more. So you can economy your time and instead to explore all related to information ask at once exactly what you are interested in.`;
 
 function App() {
-  const { is_online, turn, on } = useWs(
+  console.log("App");
+  const is_online = true;
+  const { turn, on } = useWs(
     `ws://${url.host}/api/ws`,
   );
   const [messages, set_messages] = useState<string[]>([]);
+  const [is_user_ask, set_is_user_ask] = useState(false);
 
   on("message", ({ data }: MessageEvent) => {
     set_messages((prev) => [...prev, data]);
@@ -26,12 +31,7 @@ function App() {
     >
       <Button size="large" type="link" href={url.origin}>Back to Home</Button>
       <h1 className={tw("text-2xl")}>Ask about me</h1>
-      <p className={tw("italic")}>
-        This chat is served by CHAT-GPT bot that already know all required
-        information about me and even little more. So you can economy your time
-        and instead to explore all related to information ask at once exactly
-        what you are interested in.
-      </p>
+      <p className={tw("italic")}>{description}</p>
 
       <ul>
         {messages.map((m, i) => {
@@ -44,11 +44,27 @@ function App() {
       </ul>
       {is_online
         ? (
-          <Input
-            onChange={(ev) => {
-              console.log(ev);
-            }}
-          />
+          <>
+            <Input.TextArea
+              autoSize={true}
+              value={""}
+              onChange={(ev) => {
+                if (is_user_ask) {
+                  set_messages((prev) => [...prev, ev.target.value]);
+                  ev.target.value = "";
+                }
+              }}
+            />
+            <Button
+              type="primary"
+              size="middle"
+              onClick={() => {
+                set_is_user_ask(true);
+              }}
+            >
+              Send
+            </Button>
+          </>
         )
         : (
           <Button
