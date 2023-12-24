@@ -1,6 +1,7 @@
 ---
 title: Delegating Control Over Input to a Child Component
 tags: [react, reflections, lab]
+date: '12-23-2023'
 ---
 
 ## Introduction
@@ -21,6 +22,10 @@ A potential issue with controlled inputs is performance degradation. This occurs
 because every keystroke triggers a rerender, which can affect the performance of
 the component and its siblings.
 
+
+<!-- truncate -->
+
+
 :::info
 
 ### [Link to solution from official React documentation](https://react.dev/reference/react-dom/components/input#optimizing-re-rendering-on-every-keystroke)
@@ -28,6 +33,13 @@ the component and its siblings.
 The React documentation suggests isolating frequent rerenders in a smaller
 component to prevent affecting sibling components. This is an effective and
 straightforward solution. React Documentation on Optimizing Re-Renders
+
+:::
+
+:::warning
+
+All the content written below represents my own thoughts and speculations,
+which I developed while learning about this topic.
 
 :::
 
