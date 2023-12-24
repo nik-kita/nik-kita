@@ -153,7 +153,7 @@ const config: Config = {
       } My Project, Inc. Built with Docusaurus.`,
     },
     prism: {
-      theme: prismThemes.github,
+      theme: prismThemes.oceanicNext,
       darkTheme: prismThemes.oneDark,
       additionalLanguages: ['toml', 'bash'],
     },
