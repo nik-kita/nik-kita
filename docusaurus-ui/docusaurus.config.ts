@@ -64,9 +64,15 @@ const config: Config = {
       items: [
         {
           type: "docSidebar",
-          sidebarId: "defaultSidebar",
+          sidebarId: "sugar_ws_sidebar",
           position: "left",
           label: "SugarWs",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "notes_sidebar",
+          position: "left",
+          label: "Notes",
         },
         { to: "/blog", label: "Blog", position: "left" },
       ],
@@ -114,11 +120,11 @@ const config: Config = {
           items: [
             {
               label: "SugarWs",
-              to: "/docs/intro",
+              href: "/docs/sugar-ws/intro",
             },
             {
               label: "This site",
-              to: "/",
+              href: "/",
             },
           ],
         },
@@ -153,7 +159,7 @@ const config: Config = {
       } My Project, Inc. Built with Docusaurus.`,
     },
     prism: {
-      theme: prismThemes.github,
+      theme: prismThemes.oceanicNext,
       darkTheme: prismThemes.oneDark,
       additionalLanguages: ['toml', 'bash'],
     },
