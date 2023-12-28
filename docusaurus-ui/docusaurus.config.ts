@@ -68,6 +68,13 @@ const config: Config = {
           position: "left",
           label: "SugarWs",
         },
+
+        {
+          type: "docSidebar",
+          sidebarId: "karabiner_json_generator_sidebar",
+          position: "left",
+          label: "Karabiner generator",
+        },
         {
           type: "docSidebar",
           sidebarId: "notes_sidebar",
@@ -121,6 +128,10 @@ const config: Config = {
             {
               label: "SugarWs",
               href: "/docs/sugar-ws/intro",
+            },
+            {
+              label: "Karabiner config generator",
+              href: "/docs/karabiner-json-generator/about",
             },
             {
               label: "This site",
