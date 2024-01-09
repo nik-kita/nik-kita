@@ -27,7 +27,11 @@ export default function Skills() {
       />
       <CvBlockItem
         subtitles={["Popular modules, libraries"]}
-        content="Jest, Socket.io, Stripe, Prisma, TypeORM, Mongoose, Grammy (telegram)"
+        content="Jest, Socket.io, Stripe, Prisma, TypeORM, Mongoose, Grammy (telegram), XState"
+      />
+      <CvBlockItem
+        subtitles={["Frontend (have not commercial experience)"]}
+        content="React, Redux, CSS, Tailwind, Signals, Rxjs"
       />
       <CvBlockItem
         subtitles={["Another stuff"]}
