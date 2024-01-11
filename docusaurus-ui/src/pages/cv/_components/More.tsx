@@ -4,7 +4,7 @@ import CvBlockItem from "./CvBlockItem";
 export default function More() {
   return (
     <CvBlock title="More">
-      <CvBlockItem content={["https://nik-kita.deno.dev"]} />
+      <CvBlockItem content={<a href="https://nik-kita.deno.dev">nik-kita.deno.dev</a>} />
       <CvBlockItem
         subtitles={["GitHub"]}
         content={<a href="https://github.com/nik-kita">github.com/nik-kita</a>}
