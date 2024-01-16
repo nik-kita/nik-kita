@@ -39,7 +39,9 @@ export default function Home(): JSX.Element {
           to={require("@site/static/files/nodejs__cv__nikita_moiseienko.pdf")
             .default}
         >
-          Download CV<span className={tw("hidden sm:inline font-thin")}> (in pdf format)</span>
+          Download CV<span className={tw("hidden sm:inline font-thin")}>
+            (in pdf format)
+          </span>
         </Link>
       </main>
     </Layout>

@@ -4,11 +4,10 @@ sidebar_position: 3
 
 # Hyper
 
-Make your `capslock` finally little useful key!
-(If you don't undersand what and why - immediatelly read next chapter) 
+Make your `capslock` finally little useful key! (If you don't undersand what and
+why - immediatelly read next chapter)
 
 ```json
-
 {
   "title": "🔥 Hyper from CapsLock 🔥",
   "rules": [
@@ -87,5 +86,4 @@ Make your `capslock` finally little useful key!
     }
   ]
 }
-
 ```

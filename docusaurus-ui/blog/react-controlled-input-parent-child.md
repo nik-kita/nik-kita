@@ -22,9 +22,7 @@ A potential issue with controlled inputs is performance degradation. This occurs
 because every keystroke triggers a rerender, which can affect the performance of
 the component and its siblings.
 
-
 <!-- truncate -->
-
 
 :::info
 
@@ -38,8 +36,8 @@ straightforward solution. React Documentation on Optimizing Re-Renders
 
 :::warning
 
-All the content written below represents my own thoughts and speculations,
-which I developed while learning about this topic.
+All the content written below represents my own thoughts and speculations, which
+I developed while learning about this topic.
 
 :::
 

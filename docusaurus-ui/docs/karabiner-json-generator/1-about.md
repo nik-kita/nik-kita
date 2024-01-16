@@ -12,9 +12,10 @@ Actual only for Mac users!
 
 :::
 
-Enhancer of your keyboard, shortcuts, gestures and other stuff.
-Out of the box has a lot of useful stuff.
+Enhancer of your keyboard, shortcuts, gestures and other stuff. Out of the box
+has a lot of useful stuff.
 
 ---
 
-But if you want more advanced features or even configure them by yourself, this repo is for you!
+But if you want more advanced features or even configure them by yourself, this
+repo is for you!

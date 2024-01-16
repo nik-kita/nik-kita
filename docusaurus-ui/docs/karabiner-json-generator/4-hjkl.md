@@ -4,8 +4,11 @@ sidebar_position: 4
 
 # hjkl Navigation
 
-Cool men know how awesome to use vim-like navigation. So your `hjkl` letters become arrows. But in vim you should switch between modes. This config allow you to use `capslock` as `hyper` key. So `capslock + h = left`, `capslock + k = down` and so on including selections and etc..
-If you don't realize how it cool and handy and speedy and enjoyble you never try it!
+Cool men know how awesome to use vim-like navigation. So your `hjkl` letters
+become arrows. But in vim you should switch between modes. This config allow you
+to use `capslock` as `hyper` key. So `capslock + h = left`,
+`capslock + k = down` and so on including selections and etc.. If you don't
+realize how it cool and handy and speedy and enjoyble you never try it!
 
 ```json
 {
@@ -167,6 +170,4 @@ If you don't realize how it cool and handy and speedy and enjoyble you never try
     }
   ]
 }
-
 ```
-

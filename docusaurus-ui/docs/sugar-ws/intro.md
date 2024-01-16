@@ -8,8 +8,7 @@ sidebar_position: 1
 
 - [SugarWs on Deno Land](https://deno.land/x/sugar_ws)
 - [SugarWs on npm](https://www.npmjs.com/package/sugar_ws)
-- [GitHub repository](https://github.com/nik-kita/sugar_ws) 
-:::
+- [GitHub repository](https://github.com/nik-kita/sugar_ws) :::
 
 ## Motivation
 

@@ -5,9 +5,7 @@ slug: 'keyd-config'
 date: '12-24-2023'
 ---
 
-
 [See Keyd README.md for more details](https://github.com/rvaiya/keyd)
-
 
 :::info
 
@@ -19,8 +17,9 @@ For example this is my config. It enable:
 
 <!-- truncate -->
 
-And all this stuff is enable across my operation system. So no matter where
-I use my keyboard, in vscode or in terminal or even in browser -- these rules are working.
+And all this stuff is enable across my operation system. So no matter where I
+use my keyboard, in vscode or in terminal or even in browser -- these rules are
+working.
 
 :::
 
@@ -46,5 +45,5 @@ enter = macro(C-r)
 a = overload(a_capslock_layer, esc)
     [a_capslock_layer]
 l = tab
-h = macro(S-tab)  
+h = macro(S-tab)
 ```
