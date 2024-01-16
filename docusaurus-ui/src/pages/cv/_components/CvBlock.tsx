@@ -1,5 +1,5 @@
+import { Slot } from "@site/src/components/slot.type";
 import { PropsWithChildren } from "react";
-import { Slot } from "../../../utils/slot.type";
 import { tw } from "../../../utils/tw";
 import CvTitle from "./CvTitle";
 
@@ -11,7 +11,6 @@ export default function CvBlock(
       className={tw(
         one_page_print && "print:break-inside-avoid",
         "flex flex-col px-2",
-        "font-sans font-light",
         className,
       )}
     >

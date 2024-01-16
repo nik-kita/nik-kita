@@ -15,7 +15,7 @@ export default function Skills() {
       />
       <CvBlockItem
         subtitles={["Databases"]}
-        content="Postgres, Mongodb, KV, Redis"
+        content="Postgres SQL, MongoDB, KV, Redis"
       />
       <CvBlockItem
         subtitles={["Clouds"]}

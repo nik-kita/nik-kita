@@ -1,7 +1,8 @@
-import { CONTENT } from "../_const/content";
 import { tw } from "../../../utils/tw";
+import { CONTENT } from "../_const/content";
 import CvBlock from "./CvBlock";
-import Ava from "@site/static/img/in-opera.ava.png";
+
+const Ava = require("@site/static/img/in-opera.ava.png").default;
 
 const contacts = (
   <ul className={tw("flex flex-col")}>

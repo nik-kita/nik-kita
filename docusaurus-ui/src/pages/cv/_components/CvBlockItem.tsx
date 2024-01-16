@@ -1,20 +1,23 @@
 import { ReactNode } from "react";
 import { tw } from "../../../utils/tw";
 
-export default function CvBlockItem({ subtitles, content, footer }: Props) {
+export default function CvBlockItem(
+  { subtitles, content, footer, children }: Props,
+) {
   return (
     <div>
-      <p className={tw("py-2 text-lg", "print:text-xs")}>
+      <p className={tw("print:text-xs")}>
         {subtitles?.map((s, i) => {
           return (
             <>
-              <span className={tw("font-bold")} key={i}>{s}</span>
+              <span className="font-normal" key={i}>{s}</span>
               <br />
             </>
           );
         })}
         <span>{content}</span>
       </p>
+      {children}
       {footer}
     </div>
   );
@@ -22,6 +25,7 @@ export default function CvBlockItem({ subtitles, content, footer }: Props) {
 
 type Props = {
   content?: string | ReactNode;
-  subtitles?: (string)[];
+  subtitles?: (string | ReactNode)[];
   footer?: ReactNode;
+  children?: ReactNode;
 };

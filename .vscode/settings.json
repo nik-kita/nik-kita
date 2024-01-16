@@ -1,0 +1,7 @@
+{
+  "deno.enable": true,
+  "deno.disablePaths": [
+    "./docusaurus-ui",
+    "./spa-iu"
+  ]
+}
