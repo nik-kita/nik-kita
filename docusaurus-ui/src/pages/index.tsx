@@ -36,7 +36,7 @@ export default function Home(): JSX.Element {
             "margin-horiz--xs",
             "button button--secondary button--lg",
           )}
-          to={require("@site/static/files/nodejs__nikita_moiseienko.pdf")
+          to={require("@site/static/files/nodejs_nikita_moiseienko.pdf")
             .default}
         >
           Download CV<span className={tw("hidden sm:inline font-thin")}>
