@@ -1,0 +1,70 @@
+---
+title: Multiply deploys on 1 pull-request
+tags: ['hacks', 'config', 'notes', 'my', 'lab', 'Github Actions']
+slug: 'multi-deploys-on-1-pr'
+date: '02-09-2024'
+---
+
+# `1 explicit PR => multiple deploys`
+
+> That is what I want to play with today!
+
+## Spoiler:
+
+
+```yaml title=deploy.yml
+
+name: Deploy all target by pushing into main only
+env:
+  CURRENT_BRANCH: ${{ github.head_ref || github.ref_name }}
+  EXPLICIT_PUSH_BRANCH: main
+  IMPLICIT_DEPLOY_BRANCHES: "deploy-1 deploy-2 deploy-3"
+on:
+  pull_request: # will be making explicitly
+    branches:
+      - ${{ env.CURRENT_BRANCH }}
+  push: # after PR these pushes will be triggered implicitly
+    branches: [deploy-1, deploy-2, deploy-3]
+jobs:
+  general:
+    name: General for any workflow (branch)
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+    steps:
+      - name: show token // TODO rm
+        run: echo ${{ secrets.SUPER_GITHUB_TOKEN }}
+
+      - name: Clone repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.SUDO_GH_TOKEN }}
+
+      - name: Current branch
+        run: echo ${{ env.CURRENT_BRANCH }}
+
+{/* <!-- truncate -->s */}
+
+      - name: Workflow for explicit push to main branch that should trigger another updates/synchronizations and own workflows
+        if: ${{ env.CURRENT_BRANCH == env.EXPLICIT_PUSH_BRANCH }}
+        run: >
+          git config user.name workflow-bot &&
+          git config user.email workflow-bot@mail.com &&
+          git checkout -b t1-deploy-1 &&
+          git push origin t1-deploy-1 --force &&
+          git checkout -b t1-deploy-2 &&
+          git push origin t1-deploy-2 --force
+```
+
+# So when it can be handy?
+
+* You have some apis, maybe frontends written for example on typescript that allow you to write some libraries that will share their code between these applications. For example types or validators or maybe event services or components. So you omit code-duplication and get code-synchronizations for sharing-layer between your applications out of the box.
+
+* Is it cool? Yes, if it is really monorepo but not monolite...
+
+* So we have some independent applications but single repository => all deploys should be updated after code changing.
+
+* That's why will be cool to make pull-request that will be automatically trigger updating another deploys.
+
+
