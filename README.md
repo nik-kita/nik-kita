@@ -1,8 +1,13 @@
-<a href='https://nik-kita.deno.dev'>
-  <div>
-    <img style='height:2rem;'
-      src=./docusaurus-ui/static/img/nik-kita__horizontal-light.png
-    />
-  </div>
-  <img style='height:10rem;' src=./spa-ui/src/assets/img/duck.svg />
+
+<a href="https://stackoverflow.com/users/14139506/nik-kita">
+  <img src="https://stackoverflow.com/users/flair/14139506.png?theme=dark">
 </a>
+<pre>
+ 
+                        \   ^__^
+                         \  (oo)\_______
+                            (__)\       )\/\
+                                ||----- |
+                                ||     ||
+
+</pre>
