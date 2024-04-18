@@ -64,6 +64,12 @@ const config: Config = {
       items: [
         {
           type: "docSidebar",
+          sidebarId: "brickyard_sidebar",
+          position: "left",
+          label: "Brickyard",
+        },
+        {
+          type: "docSidebar",
           sidebarId: "sugar_ws_sidebar",
           position: "left",
           label: "SugarWs",
@@ -125,6 +131,10 @@ const config: Config = {
         {
           title: "My pets",
           items: [
+            {
+              label: "Brickyard",
+              href: "/docs/brickyard/intro",
+            },
             {
               label: "SugarWs",
               href: "/docs/sugar-ws/intro",
